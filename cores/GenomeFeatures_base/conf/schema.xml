@@ -1,0 +1,182 @@
+<schema name="genomeFeatures" version="1.5">
+<uniqueKey>object_id</uniqueKey>
+<solrQueryParser defaultOperator="AND"/>
+<fieldType name="binary" class="solr.BinaryField"/>
+<fieldType name="boolean" class="solr.BoolField" sortMissingLast="true"/>
+<fieldType name="booleans" class="solr.BoolField" multiValued="true" sortMissingLast="true"/>
+<fieldType name="date" class="solr.TrieDateField" precisionStep="0" positionIncrementGap="0"/>
+<fieldType name="double" class="solr.TrieDoubleField" precisionStep="0" positionIncrementGap="0"/>
+<fieldType name="float" class="solr.TrieFloatField" precisionStep="0" positionIncrementGap="0"/>
+<fieldType name="int" class="solr.TrieIntField" precisionStep="0" positionIncrementGap="0"/>
+<fieldType name="long" class="solr.TrieLongField" precisionStep="0" positionIncrementGap="0"/>
+<fieldType name="lowercase" class="solr.TextField" positionIncrementGap="100">
+<analyzer>
+<tokenizer class="solr.KeywordTokenizerFactory"/>
+<filter class="solr.LowerCaseFilterFactory"/>
+</analyzer>
+</fieldType>
+<fieldType name="random" class="solr.RandomSortField" indexed="true"/>
+<fieldType name="string" class="solr.StrField" sortMissingLast="true"/>
+<fieldType name="tdate" class="solr.TrieDateField" precisionStep="6" positionIncrementGap="0"/>
+<fieldType name="tdates" class="solr.TrieDateField" precisionStep="6" multiValued="true" positionIncrementGap="0"/>
+<fieldType name="tdouble" class="solr.TrieDoubleField" precisionStep="8" positionIncrementGap="0"/>
+<fieldType name="tdoubles" class="solr.TrieDoubleField" precisionStep="8" multiValued="true" positionIncrementGap="0"/>
+<fieldType name="textSpell" class="solr.TextField" positionIncrementGap="100">
+<analyzer>
+<tokenizer class="solr.StandardTokenizerFactory"/>
+<filter class="solr.StandardFilterFactory"/>
+<filter class="solr.LowerCaseFilterFactory"/>
+</analyzer>
+</fieldType>
+<fieldType name="text_custom" class="solr.TextField" positionIncrementGap="100">
+<analyzer type="index">
+<tokenizer class="solr.WhitespaceTokenizerFactory"/>
+<filter class="solr.WordDelimiterFilterFactory" preserveOriginal="1" generateNumberParts="1" splitOnCaseChange="0" catenateWords="1" splitOnNumerics="1" generateWordParts="1" catenateAll="1" catenateNumbers="1"/>
+<filter class="solr.LowerCaseFilterFactory"/>
+</analyzer>
+<analyzer type="query">
+<tokenizer class="solr.WhitespaceTokenizerFactory"/>
+<filter class="solr.WordDelimiterFilterFactory" preserveOriginal="0" generateNumberParts="1" splitOnCaseChange="0" catenateWords="0" splitOnNumerics="1" generateWordParts="1" catenateAll="0" catenateNumbers="0"/>
+<filter class="solr.LowerCaseFilterFactory"/>
+</analyzer>
+</fieldType>
+<fieldType name="text_custom_rev" class="solr.TextField" positionIncrementGap="100">
+<analyzer type="index">
+<tokenizer class="solr.WhitespaceTokenizerFactory"/>
+<filter class="solr.WordDelimiterFilterFactory" preserveOriginal="1" generateNumberParts="1" splitOnCaseChange="0" catenateWords="1" splitOnNumerics="1" generateWordParts="1" catenateAll="1" catenateNumbers="1"/>
+<filter class="solr.LowerCaseFilterFactory"/>
+<filter class="solr.ReversedWildcardFilterFactory" maxFractionAsterisk="0.33" withOriginal="true" maxPosQuestion="2" maxPosAsterisk="3"/>
+</analyzer>
+<analyzer type="query">
+<tokenizer class="solr.WhitespaceTokenizerFactory"/>
+<filter class="solr.WordDelimiterFilterFactory" preserveOriginal="0" generateNumberParts="1" splitOnCaseChange="0" catenateWords="0" splitOnNumerics="1" generateWordParts="1" catenateAll="0" catenateNumbers="0"/>
+<filter class="solr.LowerCaseFilterFactory"/>
+</analyzer>
+</fieldType>
+<fieldType name="text_general" class="solr.TextField" positionIncrementGap="100">
+<analyzer type="index">
+<tokenizer class="solr.StandardTokenizerFactory"/>
+<filter class="solr.LowerCaseFilterFactory"/>
+</analyzer>
+<analyzer type="query">
+<tokenizer class="solr.StandardTokenizerFactory"/>
+<filter class="solr.LowerCaseFilterFactory"/>
+</analyzer>
+</fieldType>
+<fieldType name="text_general_rev" class="solr.TextField" positionIncrementGap="100">
+<analyzer type="index">
+<tokenizer class="solr.StandardTokenizerFactory"/>
+<filter class="solr.LowerCaseFilterFactory"/>
+<filter class="solr.ReversedWildcardFilterFactory" maxFractionAsterisk="0.33" withOriginal="true" maxPosQuestion="2" maxPosAsterisk="3"/>
+</analyzer>
+<analyzer type="query">
+<tokenizer class="solr.StandardTokenizerFactory"/>
+<filter class="solr.LowerCaseFilterFactory"/>
+</analyzer>
+</fieldType>
+<fieldType name="text_ws" class="solr.TextField" positionIncrementGap="100">
+<analyzer>
+<tokenizer class="solr.WhitespaceTokenizerFactory"/>
+</analyzer>
+</fieldType>
+<fieldType name="text_ws_go" class="solr.TextField" positionIncrementGap="100">
+<analyzer type="index">
+<tokenizer class="solr.StandardTokenizerFactory"/>
+<filter class="solr.StopFilterFactory" words="stopwords.txt" enablePositionIncrements="true" ignoreCase="true"/>
+<filter class="solr.LowerCaseFilterFactory"/>
+</analyzer>
+<analyzer type="query">
+<tokenizer class="solr.StandardTokenizerFactory"/>
+<filter class="solr.StopFilterFactory" words="stopwords.txt" enablePositionIncrements="true" ignoreCase="true"/>
+<filter class="solr.SynonymFilterFactory" expand="true" synonyms="synonyms.txt" ignoreCase="true"/>
+<filter class="solr.LowerCaseFilterFactory"/>
+</analyzer>
+</fieldType>
+<fieldType name="tfloat" class="solr.TrieFloatField" precisionStep="8" positionIncrementGap="0"/>
+<fieldType name="tfloats" class="solr.TrieFloatField" precisionStep="8" multiValued="true" positionIncrementGap="0"/>
+<fieldType name="tint" class="solr.TrieIntField" precisionStep="8" positionIncrementGap="0"/>
+<fieldType name="tints" class="solr.TrieIntField" precisionStep="8" multiValued="true" positionIncrementGap="0"/>
+<fieldType name="tlong" class="solr.TrieLongField" precisionStep="8" positionIncrementGap="0"/>
+<fieldType name="tlongs" class="solr.TrieLongField" precisionStep="8" multiValued="true" positionIncrementGap="0"/>
+<fieldType name="uuid" class="solr.UUIDField" indexed="true"/>
+<field name="_version_" type="long" indexed="false" required="true" stored="true" docValues="true"/>
+<field name="aliases" type="text_general" multiValued="true" indexed="true" stored="true"/>
+<field name="assembly_ref" type="string" indexed="true" stored="true"/>
+<field name="complete" type="boolean" indexed="true" stored="true"/>
+<field name="dna_sequence_length" type="long" indexed="true" stored="true"/>
+<field name="domain" type="text_general" indexed="true" stored="true"/>
+<field name="feature_id" type="text_general" indexed="true" stored="true"/>
+<field name="feature_type" type="text_general" indexed="true" stored="true"/>
+<field name="functions" type="text_general" multiValued="true" indexed="true" stored="true"/>
+<field name="gc_content" type="float" indexed="true" stored="true"/>
+<field name="gene_name" type="text_general" indexed="true" stored="true"/>
+<field name="genetic_code" type="text_general" indexed="true" stored="true"/>
+<field name="genome_dna_size" type="long" indexed="true" stored="true"/>
+<field name="genome_feature_id" type="text_general" indexed="true" stored="true"/>
+<field name="genome_id" type="text_general" indexed="true" stored="true"/>
+<field name="genome_source" type="text_general" indexed="true" stored="true"/>
+<field name="genome_source_id" type="string" indexed="false" stored="true"/>
+<field name="go_ontology_description" type="text_general" indexed="true" stored="true"/>
+<field name="go_ontology_domain" type="text_general" indexed="true" stored="true"/>
+<field name="location_begin" type="long" multiValued="true" indexed="true" stored="true"/>
+<field name="location_contig" type="text_general" multiValued="true" indexed="true" stored="true"/>
+<field name="location_end" type="long" multiValued="true" indexed="true" stored="true"/>
+<field name="location_strand" type="text_general" multiValued="true" indexed="true" stored="true"/>
+<field name="md5" type="text_general" indexed="true" stored="true"/>
+<field name="num_cds" type="int" default="0" indexed="true" stored="true"/>
+<field name="num_contigs" type="int" default="0" indexed="true" stored="true"/>
+<field name="object_id" type="string" multiValued="false" indexed="true" stored="true"/>
+<field name="object_name" type="string" multiValued="false" indexed="false" stored="true"/>
+<field name="object_type" type="string" multiValued="false" indexed="true" stored="true"/>
+<field name="ontology_ids" type="text_general" multiValued="true" indexed="true" stored="true"/>
+<field name="ontology_lineages" type="text_general" multiValued="true" indexed="true" stored="true"/>
+<field name="ontology_names" type="text_general" multiValued="true" indexed="true" stored="true"/>
+<field name="ontology_namespaces" type="text_general" multiValued="true" indexed="true" stored="true"/>
+<field name="protein_translation_length" type="int" default="0" indexed="true" stored="true"/>
+<field name="roles" type="text_general" multiValued="true" indexed="true" stored="true"/>
+<field name="save_date" type="text_general" indexed="true" stored="true"/>
+<field name="scientific_name" type="text_general" indexed="true" stored="true"/>
+<field name="tax_id" type="text_general" indexed="true" stored="true"/>
+<field name="taxonomy" type="text_general" multiValued="true" indexed="true" stored="true"/>
+<field name="taxonomy_ref" type="string" indexed="true" stored="true"/>
+<field name="text_ws_go" type="text_general" multiValued="true" indexed="true" stored="false"/>
+<field name="workspace_name" type="text_general" indexed="true" stored="true"/>
+<field name="ws_ref" type="text_general" indexed="true" stored="true"/>
+<dynamicField name="*_flag" type="int" indexed="true" stored="true"/>
+<dynamicField name="*_txt" type="string" indexed="true" stored="true"/>
+<dynamicField name="*_id" type="int" indexed="true" stored="true"/>
+<copyField source="aliases" dest="text_ws_go"/>
+<copyField source="assembly_ref" dest="text_ws_go"/>
+<copyField source="domain" dest="text_ws_go"/>
+<copyField source="feature_id" dest="text_ws_go"/>
+<copyField source="feature_type" dest="text_ws_go"/>
+<copyField source="functions" dest="text_ws_go"/>
+<copyField source="gene_name" dest="text_ws_go"/>
+<copyField source="genetic_code" dest="text_ws_go"/>
+<copyField source="genome_feature_id" dest="text_ws_go"/>
+<copyField source="genome_id" dest="text_ws_go"/>
+<copyField source="genome_source" dest="text_ws_go"/>
+<copyField source="genome_source_id" dest="text_ws_go"/>
+<copyField source="go_ontology_description" dest="text_ws_go"/>
+<copyField source="go_ontology_domain" dest="text_ws_go"/>
+<copyField source="location_contig" dest="text_ws_go"/>
+<copyField source="location_strand" dest="text_ws_go"/>
+<copyField source="md5" dest="text_ws_go"/>
+<copyField source="object_id" dest="text_ws_go"/>
+<copyField source="object_name" dest="text_ws_go"/>
+<copyField source="object_name" dest="text_ws_go"/>
+<copyField source="object_type" dest="text_ws_go"/>
+<copyField source="ontology_ids" dest="text_ws_go"/>
+<copyField source="ontology_lineages" dest="text_ws_go"/>
+<copyField source="ontology_names" dest="text_ws_go"/>
+<copyField source="ontology_namespaces" dest="text_ws_go"/>
+<copyField source="roles" dest="text_ws_go"/>
+<copyField source="save_date" dest="text_ws_go"/>
+<copyField source="scientific_name" dest="text_ws_go"/>
+<copyField source="tax_id" dest="text_ws_go"/>
+<copyField source="taxonomy" dest="text_ws_go"/>
+<copyField source="taxonomy_ref" dest="text_ws_go"/>
+<copyField source="workspace_name" dest="text_ws_go"/>
+<copyField source="ws_ref" dest="text_ws_go"/>
+</schema>
+
