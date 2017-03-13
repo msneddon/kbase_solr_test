@@ -1,0 +1,29 @@
+{
+    "add":
+    {
+        "doc":
+            {
+                "_version_":1,
+                "genome_source_id":"NZ_KV802605 (34 more accessions)",
+                "object_type":"KBaseGenomes.Genome-8.2",
+                "workspace_name":"ReferenceDataManager",
+                "ws_ref":"19217/153127/1",
+                "scientific_name":"Streptococcus sp. HMSC075A03",
+                "genetic_code":"11",
+                "assembly_ref":"19217/153125/1",
+                "gc_content":0.3525034,
+                "num_contigs":35,
+                "genome_source":"refseq",
+                "save_date":"2017-03-10T04:07:28+0000",
+                "domain":"Bacteria",
+                "taxonomy":["cellular organisms","Bacteria","Terrabacteria group","Firmicutes","Bacilli","Lactobacillales","Streptococcaceae","Streptococcus"],
+                "genome_dna_size":2052332,
+                "object_id":"kb|ws_ref:19217/153127/1",
+                "taxonomy_ref":"12570/505524/1",
+                "object_name":"kb|g.GCF_001810765.1",
+                "genome_id":"GCF_001810765.1",
+                "num_cds":2038,
+                "protein_translation_length":0
+            }
+    }
+}
