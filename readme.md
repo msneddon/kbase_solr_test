@@ -34,3 +34,12 @@ You can access the search service through:
 
 You should then be able to view docker logs from both solr and the search service to
 see what's actually happening.
+
+
+The cores for SOLR can be mounted into the container from the solr4/cores directory.  I have an example of the new
+GenomeFeatures core base configuration that can be used by Solr.  To add it, copy the template:
+
+    cp solr4/cores/GenomeFeatures_base solr4/cores/GenomeFeatures
+
+Then run something like this:
+    curl "http://localhost:8983/solr/admin/cores?wt=json&indexInfo=false&action=CREATE&name=GenomeFeatures&instanceDir=%2Fcores%2FGenomeFeatures&dataDir=&config=solrconfig.xml&schema=schema.xml"
