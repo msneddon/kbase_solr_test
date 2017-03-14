@@ -1,29 +1,22 @@
+version: "3"
 
-solr4:
-  image: msneddon/solr4.10
-  expose:
-    - 8983
-  ports:
-    - 8983:8983
-  volumes:
-    - /Users/msneddon/kb/search/kbase_solr_test/solr4/cores:/cores
+services:
+  solr4:
+    image: msneddon/solr4.10
+    expose:
+      - 8983
+    ports:
+      - 8983:8983
+    volumes:
+      - ./solr4/cores:/cores
 
-nginx_proxy:
-  build: nginx/.
-  expose:
-    - 7077
-  ports:
-    - 7077:7077
-  links:
-    - solr4
-
-search_service:
-  build: search/.
-  expose:
-    - 7078
-  ports:
-    - 7078:7078
-  links:
-    - nginx_proxy
-  volumes:
-    - /Users/msneddon/kb/search/kbase_solr_test/search/config:/kb/module/search/config
+  search_service:
+    build: search/.
+    expose:
+      - 7078
+    ports:
+      - 7078:7078
+    links:
+      - solr4
+    volumes:
+      - ./search/config:/kb/module/search/config
