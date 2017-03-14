@@ -1,32 +1,22 @@
 
 
-Starts up 3 containers for local search testing:
+Starts up 2 containers for local search testing:
 
 1) solr v4.10 container (right now you have to manually load the cores, see solr4 directory)
 
-2) nginx container (needed to proxy solr to a new location, since kbase search service has
-hard-coded paths to URL/search/... , while solr listens on URL/solr.
-
-3) The actual search service, which right now is a simplified fork of kbase/search.  This
+2) The actual search service, which right now is a simplified fork of kbase/search.  This
 could probably be added as a submodule, but for now, just check it out here like so:
 
-    git clone -b clean-service https://github.com/msneddon/search
+    git clone -b clean-service-2 https://github.com/msneddon/search
 
 
-To start, edit the docker-compose.yml file to fill in the proper volume mount paths on your system
-(because I couldn't easily find a way to inject the current directory).
-
-Then be sure you have checked out the clean-service branch of the search.
-
-Finally, you should be able to start up the containers
+To start, be sure you have checked out the clean-service branch of the search.  You should be able to start up the containers like so:
 
     docker-compose up -d --build
 
 You can then access solr directly from either:
 
-    http://localhost:8983/solr/
-    http://localhost:7077/search/   (goes through nginx, you need the trailing slash
-                                     because my nginx skillz aren't great)
+    http://localhost:8983/solr
 
 You can access the search service through:
 
@@ -36,10 +26,9 @@ You should then be able to view docker logs from both solr and the search servic
 see what's actually happening.
 
 
-The cores for SOLR can be mounted into the container from the solr4/cores directory.  I have an example of the new
-GenomeFeatures core base configuration that can be used by Solr.  To add it, copy the template:
+The cores for SOLR can be mounted into the container from the solr4/cores directory.  I have an example of the new GenomeFeatures_prod core base configuration that can be used by Solr.  To add it, copy the template:
 
-    cp solr4/cores/GenomeFeatures_base solr4/cores/GenomeFeatures
+    cp -r solr4/cores/GenomeFeatures_base solr4/cores/GenomeFeatures
 
 Then run something like this:
-    curl "http://localhost:8983/solr/admin/cores?wt=json&indexInfo=false&action=CREATE&name=GenomeFeatures&instanceDir=%2Fcores%2FGenomeFeatures&dataDir=&config=solrconfig.xml&schema=schema.xml"
+    curl "http://localhost:8983/solr/admin/cores?wt=json&indexInfo=false&action=CREATE&name=GenomeFeatures_prod&instanceDir=%2Fcores%2FGenomeFeatures&dataDir=&config=solrconfig.xml&schema=schema.xml"
