@@ -1,0 +1,43 @@
+{
+    "add":
+    {
+        "doc":
+            {
+                "workspace_name":"ReferenceDataManager",
+                "object_type":"KBaseGenomes.Genome-8.2.Feature",
+                "aliases":["GI:446253637","HMPREF2762_00005","WP_000331492.1","HMPREF2762_RS00005"],
+                "ws_ref":"19217/153127/1",
+                "protein_translation_length":128,
+                "assembly_ref":"19217/153125/1",
+                "genetic_code":"11",
+                "location_end":[345],
+                "genome_feature_id":"GCF_001810765.1|feature:HMPREF2762_RS00005",
+                "genome_source":"refseq",
+                "gc_content":0.3525034,
+                "domain":"Bacteria",
+                "functions":["50S ribosomal protein L17"],
+                "object_name":"GCF_001810765.1|feature:HMPREF2762_RS00005",
+                "genome_source_id":"NZ_KV802605 (34 more accessions)",
+                "feature_type":"CDS",
+                "scientific_name":"Streptococcus sp. HMSC075A03",
+                "feature_id":"HMPREF2762_RS00005",
+                "location_begin":[0,732],
+                "location_strand":["-"],
+                "save_date":"2017-03-10T04:07:28+0000",
+                "md5":"ac850709e9c3db1f4e9b27c8d4e8e476",
+                "num_contigs":35,
+                "taxonomy":["cellular organisms","Bacteria","Terrabacteria group","Firmicutes","Bacilli","Lactobacillales","Streptococcaceae","Streptococcus"],
+                "location_contig":["NZ_KV802605"],
+                "dna_sequence_length":387,
+                "object_id":"kb|ws_ref:19217/153127/1|feature:HMPREF2762_RS00005",
+                "genome_dna_size":2052332,
+                "num_cds":2038,
+                "genome_id":"GCF_001810765.1",
+                "taxonomy_ref":"12570/505524/1",
+                "_version_":1561454308771233792
+            },
+        "boost":1,
+        "overwrite":true,
+        "commitWithin": 1000
+    }
+}

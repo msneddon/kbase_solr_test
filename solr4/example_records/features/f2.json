@@ -1,0 +1,43 @@
+{
+    "add":
+    {
+        "doc":
+            {
+                "feature_type":"CDS",
+                "taxonomy_ref":"12570/523734/1",
+                "taxonomy":["cellular organisms","Bacteria","Proteobacteria","Gammaproteobacteria","Xanthomonadales","Xanthomonadaceae","Xanthomonas","Xanthomonas arboricola"],
+                "num_cds":4354,
+                "location_begin":[0,8],
+                "save_date":"2017-03-09T21:36:56+0000",
+                "scientific_name":"Xanthomonas arboricola pv. juglandis",
+                "num_contigs":14,
+                "genome_dna_size":5157457,
+                "domain":"Bacteria",
+                "assembly_ref":"19217/149912/1",
+                "object_name":"GCF_001013495.1|feature:XARJCFBP7179_RS00005",
+                "gc_content":0.6540423,
+                "md5":"2cc4b4784a53194277c4bed72cc76f51",
+                "genome_feature_id":"GCF_001013495.1|feature:XARJCFBP7179_RS00005",
+                "location_contig":["NZ_JZEG01000001"],
+                "ws_ref":"19217/149913/1",
+                "genome_id":"GCF_001013495.1",
+                "genome_source_id":"NZ_JZEG01000001 (13 more accessions)",
+                "object_type":"KBaseGenomes.Genome-8.2.Feature",
+                "feature_id":"XARJCFBP7179_RS00005",
+                "location_end":[188],
+                "protein_translation_length":0,
+                "object_id":"kb|ws_ref:19217/149913/1|feature:XARJCFBP7179_RS00005",
+                "workspace_name":"ReferenceDataManager",
+                "location_strand":["+"],
+                "genome_source":"refseq",
+                "aliases":["XARJCFBP7179_RS00005"],
+                "dna_sequence_length":180,
+                "gene_name":"XARJCFBP7179_RS00005",
+                "genetic_code":"11",
+                "_version_":1561429741441908736
+            },
+        "boost":1,
+        "overwrite":true,
+        "commitWithin": 1000
+    }
+}
