@@ -24,6 +24,9 @@
                 "genome_id":"GCF_001810765.1",
                 "num_cds":2038,
                 "protein_translation_length":0
-            }
+            },
+        "boost":1,
+        "overwrite":true,
+        "commitWithin": 1000
     }
 }
