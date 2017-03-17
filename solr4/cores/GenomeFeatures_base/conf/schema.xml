@@ -79,7 +79,7 @@
             <tokenizer class="solr.WhitespaceTokenizerFactory"/>
         </analyzer>
     </fieldType>
-    <fieldType class="solr.TextField" name="text_ws_go" positionIncrementGap="100">
+    <fieldType class="solr.TextField" name="text" positionIncrementGap="100">
         <analyzer type="index">
             <tokenizer class="solr.StandardTokenizerFactory"/>
             <filter class="solr.StopFilterFactory" enablePositionIncrements="true" ignoreCase="true" words="stopwords.txt"/>
@@ -139,43 +139,43 @@
     <field indexed="true" name="tax_id" stored="true" type="text_general"/>
     <field indexed="true" multiValued="true" name="taxonomy" stored="true" type="text_general"/>
     <field indexed="true" name="taxonomy_ref" stored="true" type="string"/>
-    <field indexed="true" multiValued="true" name="text_ws_go" stored="false" type="text_general"/>
+    <field indexed="true" multiValued="true" name="text" stored="false" type="text_general"/>
     <field indexed="true" name="workspace_name" stored="true" type="text_general"/>
     <field indexed="true" name="ws_ref" stored="true" type="text_general"/>
     <dynamicField indexed="true" name="*_flag" stored="true" type="int"/>
     <dynamicField indexed="true" name="*_txt" stored="true" type="string"/>
     <dynamicField indexed="true" name="*_id" stored="true" type="int"/>
-    <copyField dest="text_ws_go" source="aliases"/>
-    <copyField dest="text_ws_go" source="assembly_ref"/>
-    <copyField dest="text_ws_go" source="domain"/>
-    <copyField dest="text_ws_go" source="feature_id"/>
-    <copyField dest="text_ws_go" source="feature_type"/>
-    <copyField dest="text_ws_go" source="functions"/>
-    <copyField dest="text_ws_go" source="gene_name"/>
-    <copyField dest="text_ws_go" source="genetic_code"/>
-    <copyField dest="text_ws_go" source="genome_feature_id"/>
-    <copyField dest="text_ws_go" source="genome_id"/>
-    <copyField dest="text_ws_go" source="genome_source"/>
-    <copyField dest="text_ws_go" source="genome_source_id"/>
-    <copyField dest="text_ws_go" source="go_ontology_description"/>
-    <copyField dest="text_ws_go" source="go_ontology_domain"/>
-    <copyField dest="text_ws_go" source="location_contig"/>
-    <copyField dest="text_ws_go" source="location_strand"/>
-    <copyField dest="text_ws_go" source="md5"/>
-    <copyField dest="text_ws_go" source="object_id"/>
-    <copyField dest="text_ws_go" source="object_name"/>
-    <copyField dest="text_ws_go" source="object_name"/>
-    <copyField dest="text_ws_go" source="object_type"/>
-    <copyField dest="text_ws_go" source="ontology_ids"/>
-    <copyField dest="text_ws_go" source="ontology_lineages"/>
-    <copyField dest="text_ws_go" source="ontology_names"/>
-    <copyField dest="text_ws_go" source="ontology_namespaces"/>
-    <copyField dest="text_ws_go" source="roles"/>
-    <copyField dest="text_ws_go" source="save_date"/>
-    <copyField dest="text_ws_go" source="scientific_name"/>
-    <copyField dest="text_ws_go" source="tax_id"/>
-    <copyField dest="text_ws_go" source="taxonomy"/>
-    <copyField dest="text_ws_go" source="taxonomy_ref"/>
-    <copyField dest="text_ws_go" source="workspace_name"/>
-    <copyField dest="text_ws_go" source="ws_ref"/>
+    <copyField dest="text" source="aliases"/>
+    <copyField dest="text" source="assembly_ref"/>
+    <copyField dest="text" source="domain"/>
+    <copyField dest="text" source="feature_id"/>
+    <copyField dest="text" source="feature_type"/>
+    <copyField dest="text" source="functions"/>
+    <copyField dest="text" source="gene_name"/>
+    <copyField dest="text" source="genetic_code"/>
+    <copyField dest="text" source="genome_feature_id"/>
+    <copyField dest="text" source="genome_id"/>
+    <copyField dest="text" source="genome_source"/>
+    <copyField dest="text" source="genome_source_id"/>
+    <copyField dest="text" source="go_ontology_description"/>
+    <copyField dest="text" source="go_ontology_domain"/>
+    <copyField dest="text" source="location_contig"/>
+    <copyField dest="text" source="location_strand"/>
+    <copyField dest="text" source="md5"/>
+    <copyField dest="text" source="object_id"/>
+    <copyField dest="text" source="object_name"/>
+    <copyField dest="text" source="object_name"/>
+    <copyField dest="text" source="object_type"/>
+    <copyField dest="text" source="ontology_ids"/>
+    <copyField dest="text" source="ontology_lineages"/>
+    <copyField dest="text" source="ontology_names"/>
+    <copyField dest="text" source="ontology_namespaces"/>
+    <copyField dest="text" source="roles"/>
+    <copyField dest="text" source="save_date"/>
+    <copyField dest="text" source="scientific_name"/>
+    <copyField dest="text" source="tax_id"/>
+    <copyField dest="text" source="taxonomy"/>
+    <copyField dest="text" source="taxonomy_ref"/>
+    <copyField dest="text" source="workspace_name"/>
+    <copyField dest="text" source="ws_ref"/>
 </schema>
